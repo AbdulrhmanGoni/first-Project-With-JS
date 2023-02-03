@@ -187,6 +187,7 @@ function createCountryPage(imgURL, coutryName, basicInfo, additionalInfo, Border
     let imgCountry = document.createElement("img");
     imgCountry.classList.add("bxSh");
     imgCountry.src = imgURL;
+    imgCountry.alt = "flag";
 
     // div that contains all data of country
     let theCountry = document.createElement("div");
