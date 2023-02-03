@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/goni.css">
+    <link rel="stylesheet" href="css/challinge.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <title>The World</title>
+</head>
+<body>
+    <header class="bxSh">
+        <div class="contener header">
+            <h2>Where is in the world</h2>
+            <span class="switchTheme">Light Mode</span>
+        </div>
+    </header>
+    <div class="contener content">
+        <div class="options">
+            <form class="search bxSh">
+                <input type="search" name="country" id="searchField" placeholder="Search For Country">
+            </form>
+            <div class="filter bxSh">
+                <p class="currently">Filter by Region: <span style="font-weight: bold;"></span></p>
+                <i class="dropMenu fa-solid fa-chevron-down"></i>
+                <form class="filters bxSh">
+                    <button class="region filteringBy" value="All World">All World</button>
+                    <button class="region" value="Africa">Africa</button>
+                    <button class="region" value="Americas">Americas</button>
+                    <button class="region" value="Asia">Asia</button>
+                    <button class="region" value="Europe">Europe</button>
+                    <button class="region" value="Oceania">Oceania</button>
+                    <button class="region" value="Antarctic">Antarctic</button>
+                </form>
+            </div>
+        </div>
+        <section class="displayContent"></section>
+    </div>
+
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <script src="js/challinge.js" type="module"></script>
+    <script src="js/goni.js" type="module"></script>
+</body>
+</html>

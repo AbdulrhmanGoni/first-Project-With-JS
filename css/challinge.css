@@ -1,0 +1,329 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+:root {
+    /* --theme: white;
+    --textColor: black;
+    --subTheme: white; */
+    --theme: #000b2e;
+    --textColor: white;
+    --subTheme: #171d31;
+}
+::-webkit-scrollbar {
+    width: 3px;
+    background-color: var(--theme);
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--textColor);
+}
+input, select, button {
+    border: none;
+    outline: none;
+}
+.bxSh {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+body {
+    font-family: 'Roboto';
+    background-color: var(--theme);
+    color: var(--textColor);
+    letter-spacing: 1px;
+}
+.contener {
+    width: 88%;
+    margin: 0px auto;
+}
+@media (max-width: 768px) {
+    .contener {
+        width: 95%;
+    }
+}
+/* ===========================[ header section ]========================================= */
+header {
+    background-color: var(--subTheme);
+    width: 100%;
+    position: relative;
+    z-index: 999;
+}
+header .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    padding: 0px 15px;
+}
+@media (max-width: 768px) {
+    header .header h2 {
+        font-size: 17px;
+    }
+    header .header span {
+        font-size: 13px;
+    }
+}
+.switchTheme {
+    font-size: 15px;
+    cursor: pointer;
+}
+.switchTheme::before {
+    content: "\f186";
+    font-family: "Font Awesome 6 Free";
+    padding-right: 10px;
+}
+
+/* ===========================[ header section end ]========================================= */
+/* ===========================[ search and filter section ]========================================= */
+.content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: calc(100vh - 70px);
+}
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row wrap;
+    width: 100%;
+    margin: 20px 0px;
+    gap: 20px;
+    padding: 0px 15px;
+}
+.search {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding: 0px 20px;
+    background-color: var(--subTheme);
+    border-radius: 5px;
+}
+.search::before {
+    content: "\f002";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    padding-right: 15px;
+    color: var(--textColor);
+    font-size: 14px;
+}
+#searchField {
+    color: var(--textColor);
+    background-color: transparent;
+}
+#searchField::placeholder {
+    color: var(--textColor);
+}
+.filter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--subTheme);
+    border-radius: 5px;
+    width: 255px;
+    height: 50px;
+    position: relative;
+    padding: 10px 15px;;
+}
+.dropMenu {
+    position: absolute;
+    right: 10px;
+    font-size: 13px;
+    cursor: pointer;
+}
+.filters {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 53px;
+    left: 0px;
+    width: 100%;
+    padding: 10px;
+    background-color: inherit;
+    border-radius: 5px;
+    color: var(--textColor);
+    transition: .2s;
+    transform-origin: top;
+    transform: scaleY(0);
+}
+.open {
+    transform: scaleY(1);
+}
+.filters .region {
+    text-align: left;
+    padding: 0px 15px;
+    margin-bottom: 15px;
+    background-color: inherit;
+    color: var(--textColor);
+    cursor: pointer;
+    border-radius: 22px;
+}
+.filters .filteringBy {
+    border-left: solid var(--textColor) 1px;
+    font-weight: 900;
+}
+.filters .region:hover {
+    transition: .3s;
+    transform: translateX(8px);
+}
+@media (min-width: 768px) {
+    .search {
+        margin: 35px 0px;
+    }
+    #searchField {
+        width: 300px;
+    }
+}
+/* ===========================[ search and filter section end ]========================================= */
+
+/* ===========================[ display Content section ]========================================= */
+.displayContent {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(370px, 1fr));
+    gap: 30px;
+    width: 100%;
+    padding: 0px 15px;
+}
+@media (max-width: 768px) {
+    .displayContent {
+        gap: 20px;
+    }
+}
+.aCountry {
+    background-color: var(--subTheme);
+    border-radius: 5px;
+    overflow: hidden;
+}
+.aCountry img {
+    width: 100%;
+    height: 190px;
+}
+.aCountry .information {
+    padding: 20px;
+}
+.aCountry .information h3 {
+    margin-bottom: 20px;
+}
+.aCountry .information p {
+    margin-bottom: 10px;
+}
+/* ===========================[ display Content section end ]========================================= */
+
+/* ===========================[ country Info section ]========================================= */
+.countryInfo {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    padding: 0px 15px;
+    background-color: var(--theme);
+}
+.countryInfo .back {
+    display: flex;
+    align-items: center;
+    background-color: var(--subTheme);
+    color: var(--textColor);
+    margin: 40px 0px;
+    align-self: flex-start;
+    border-radius: 5px;
+    padding: 15px 35px;
+    font-size: 18px;
+}
+.countryInfo .back::before {
+    content: "\f30a";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 10px;
+    font-size: 20px;
+}
+.countryInfo .theCountry {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    gap: 50px;
+    text-align: left;
+    background-color: var(--theme);
+}
+.countryInfo img {
+    width: 500px;
+    height: 400px;
+}
+.countryInfo .infoContener {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    color: var(--textColor);
+}
+.infoContener p {
+    font-size: 18px;
+}
+.countryInfo .info {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 25px 0px;
+    justify-content: space-between;
+    flex-grow: 1;
+    gap: 20px;
+}
+.countryInfo .info h2 {
+    margin-bottom: 20px;
+}
+.countryInfo .info p {
+    margin-bottom: 10px;
+}
+.countryInfo .basic  {
+    padding-bottom: 20px;
+}
+.countryInfo .additional {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.countryInfo .infoContener .borders p {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    padding: 10px 0px;
+    gap: 8px;
+}
+.countryInfo .infoContener .borders span {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 2px;
+    background-color: var(--subTheme);
+}
+@media (max-width: 1180px) {
+    .countryInfo .theCountry {
+        justify-content: center;
+    }
+    .countryInfo .infoContener {
+        width: 100%;
+    }
+    .countryInfo .info {
+        padding: 0px;
+    }
+}
+@media (max-width: 560px) {
+    .countryInfo .back {
+        padding: 15px 25px;
+        font-size: 16px;
+    }
+    .countryInfo .back {
+        font-size: 16px;
+    }
+    .countryInfo .info {
+        flex-direction: column;
+    }
+    .countryInfo img {
+        width: 100%;
+        height: fit-content;
+    }
+    .countryInfo .infoContener .borders span {
+        padding: 5px;
+    }
+}
+/* ===========================[ country Info section end ]========================================= */
