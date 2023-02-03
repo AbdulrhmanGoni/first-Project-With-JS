@@ -76,7 +76,6 @@ function displayCountries() {
     if (filter == "All World") {
         url = `https://restcountries.com/v3.1/all`;
     }
-    // let Regions = ["Africa", "Americas", "Asia", "Europe", "Oceania", "Antarctic"];
     // send request and get data of countries from 'restcountries.com' API
     getRestcountriesResponses(url).then((data) => {
         for (let i = 0; i < data.length; i++) {
